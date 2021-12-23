@@ -2,14 +2,19 @@
      margin: 0px;
      padding: 0px;
  }
- 
- h3 {
+ :root{
+   --margin-header:102px;
+}
+
+
+ h4 {
      text-align: center;
  }
  
  .header {
      background-color: #FFB238;
  }
+ 
  
  .wrap_layout--1 {
      padding: 5px;
@@ -18,15 +23,6 @@
      justify-content: center;
      flex-wrap: wrap;
      background-color: black;
- }
- 
- .wrap_layout--2 {
-     height: 50px;
-     width: 100%;
-     display: flex;
-     flex-wrap: nowrap;
-     background-color: black;
-     justify-content: space-between;
  }
  
  .wrap_layout--item {
@@ -42,6 +38,29 @@
      cursor: pointer;
  }
  
+ .wrap_layout--2 {
+     width: 100%;
+     display: flex;
+     flex-wrap: wrap;
+     background-color: black;
+     justify-content: space-between;
+ }
+ 
+ .wrap_layout--item--2 {
+     color: white;
+     font-weight: 600;
+     font-size: 12px;
+     margin-top: 10px;
+ }
+ 
+ .wrap_layout--item--3 {
+     font-size: 12px;
+     border-radius: 5px;
+     margin-top: 5px;
+     margin-bottom: 5px;
+     padding: 5px;
+ }
+ 
  .logo-1 {
      width: 35px;
      height: 35px;
@@ -55,15 +74,16 @@
  }
  
  .logo-3 {
-     width: 50px;
-     height: 50px;
+     width: 30px;
+     height: 30px;
      border-radius: 15px;
-     padding: 5px
+     margin-top: 5px;
+     margin-bottom: 5px;
  }
  
  li {
      color: rgb(0, 0, 0);
-     font-weight: 500;
+     font-weight: 600;
  }
  
  li:hover {
@@ -83,7 +103,7 @@
  }
  
  .product_item {
-     width: auto;
+     width: 200px;
      height: auto;
      font-size: 15px;
      border-radius: 20px;
@@ -93,7 +113,6 @@
  
  .content-sale {
      position: absolute;
-     z-index: 1;
      padding: 0.5rem;
      background: red;
      border-radius: 50%;
@@ -160,6 +179,29 @@
  .content-price-list {
      text-decoration: line-through;
  }
+ .button_cart{
+     position: absolute;
+     background: #000;
+     z-index: -1;
+     transform:  scale(0);
+     transition: transform 0.5s;
+     transform-origin: right;
+ }
+ .button_cart:hover{
+     color:#fff;
+ }
+ 
+ /* Thông tin */
+ .content_information {
+     display: flex;
+     flex-wrap: column;
+     justify-content: space-around;
+     font-size: 12px;
+ }
+ 
+ .content_bottom {
+     text-align: center;
+ }
  /* Tablet: min-width >= 740px and max-width < 1023px */
  
  @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
@@ -174,6 +216,9 @@
          font-weight: bold;
          margin: 5px;
      }
+      :root{
+   --margin-header:135px;
+}
      .logo-1 {
          width: 15px;
          height: 15px;
@@ -188,7 +233,27 @@
      .lbl_boloc {
          font-size: 0.7rem;
      }
+     .content_information {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-around;
+         font-size: 12px;
+     }
+     .product_item {
+     width: 250px;
+     height: auto;
+     font-size: 15px;
+     border-radius: 20px;
+     text-align: center;
+     margin: 10px 0px;
  }
+ .content-img {
+     width: 250px;
+     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+ }
+ }
+
+ 
  /* Mobile: max-width < 739px */
  
  @media only screen and (max-width: 46.1875em) {
@@ -203,6 +268,9 @@
          font-weight: bold;
          margin: 5px;
      }
+      :root{
+   --margin-header:140px;
+}
      .logo-1 {
          width: 15px;
          height: 15px;
@@ -217,4 +285,45 @@
      .lbl_boloc {
          font-size: 0.5rem;
      }
+
+ .all_product {
+     display: flex;
+     justify-content: center;
+       flex-wrap: wrap;
  }
+ 
+ .product_item {
+     width: 100%;
+     height: auto;
+     font-size: 15px;
+     border-radius: 20px;
+     text-align: center;
+     margin: 10px 0px;
+ }
+
+  .product_item {
+     width: 300px;
+     height: auto;
+     font-size: 15px;
+     border-radius: 20px;
+     text-align: center;
+     margin: 10px 0px;
+ }
+ .content-img {
+     width: 300px;
+     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+ }
+
+     .content_information {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         font-size: 12px;
+     }
+     .content_bottom {
+         text-align: center;
+         font-size: 10px;
+     }
+ }
+
+ 
