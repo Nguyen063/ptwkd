@@ -12,37 +12,72 @@
     <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
+    <script>
+        let app = angular.module("angularApp", []);
+        app.controller("ProductController", function($scope, $http) {
+            $http({
+                method: "GET",
+                url: "test.json"
+            }).then(function(response) {
+                    $scope.test = response.data;
+                },
+                function error(response) {
+                    $scope.error = response.statusText;
+                });
+
+            $scope.selectProduct = function(val) {
+                $scope.productDetails = val;
+            }
+        })
+
+        app.controller("Product2", function($scope, $http) {
+            $http({
+                method: "GET",
+                url: "test2.json"
+            }).then(function(response) {
+                    $scope.test2 = response.data;
+                },
+                function error(response) {
+                    $scope.error = response.statusText;
+                });
+
+            $scope.selectProduct = function(val) {
+                $scope.productDetails = val;
+            }
+        })
+    </script>
 
 
 </head>
 
-<body>
+<body ng-app="angularApp">
 
     <div class="container">
-        <div class="row">
+        <div class="row" style="position: fixed; top: 0; right: 0;left: 0; z-index: 1;">
             <nav class="navbar navbar-expand-lg navbar-light header">
                 <div class=" container-fluid " style="width:100vw ">
                     <a class="navbar-brand " href="./main.html "> Logo </a>
-                    <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#navbarNav " aria-controls="navbarNav " aria-expanded="false " aria-label="Toggle navigation ">
-      <span class="navbar-toggler-icon "></span>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-                    <div class="collapse navbar-collapse " id="navbarNav ">
-                        <ul class="navbar-nav ">
-                            <li class="nav-item ">
-                                <a class="nav-link active " aria-current="page " href="# ">Trang chủ</a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page " href="# ">Trang chủ</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active " href="# ">Tin tức</a>
+                                <a class="nav-link active" href="# ">Tin tức</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active " href="# ">Bảo hành & sửa chữa</a>
+                                <a class="nav-link active" href="# ">Bảo hành & sửa chữa</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active " href="# ">Hỗ trợ</a>
+                                <a class="nav-link active" href="# ">Hỗ trợ</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active " href="# ">Tài khoản</a>
+                                <a class="nav-link active" href="# ">Tài khoản</a>
                             </li>
                         </ul>
                     </div>
@@ -50,7 +85,7 @@
 
                 <div class="container-fluid ">
                     <form class="d-flex ">
-                        <input class="form-control me-2 " type="search " placeholder="Search " aria-label="Search ">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" ng-model="search">
                         <button class="btn btn-outline-success " type="submit ">Search</button>
                     </form>
                     <ul class="navbar-nav ">
@@ -60,175 +95,190 @@
                     </ul>
                 </div>
             </nav>
+            <div class="wrap_layout--1">
+                <div class="wrap_layout--item "><img class="logo-1 " src="../logo/apple.png " alt=" "> Apple</div>
+                <div class="wrap_layout--item "><img class="logo-1 " src="../logo/1200px-Dell_Logo.svg.png " alt=" "></div>
+                <div class="wrap_layout--item "><img class="logo-1 " src="../logo/HP.png " alt=" "> </div>
+                <div class="wrap_layout--item "><img class="logo-2 " src="../logo/lenovo.jpg " alt=" "></div>
+                <div class="wrap_layout--item "><img class="logo-2 " src="../logo/Asus.jpg " alt=" "></div>
+                <div class="wrap_layout--item "><img class="logo-2 " src="../logo/acer.jpg " alt=" "></div>
+                <div class="wrap_layout--item "><img class="logo-2 " src="../logo/MSI-Logo.png " alt=" "></div>
+                <div class="wrap_layout--item ">Hãng khác</div>
+            </div>
         </div>
         <!-- Hãng -->
-        <div class="wrap_layout--1 ">
-            <div class="wrap_layout--item "><img class="logo-1 " src="../logo/apple.png " alt=" "> Apple</div>
-            <div class="wrap_layout--item "><img class="logo-1 " src="../logo/1200px-Dell_Logo.svg.png " alt=" "></div>
-            <div class="wrap_layout--item "><img class="logo-1 " src="../logo/HP.png " alt=" "> </div>
-            <div class="wrap_layout--item "><img class="logo-2 " src="../logo/lenovo.jpg " alt=" "></div>
-            <div class="wrap_layout--item "><img class="logo-2 " src="../logo/Asus.jpg " alt=" "></div>
-            <div class="wrap_layout--item "><img class="logo-2 " src="../logo/acer.jpg " alt=" "></div>
-            <div class="wrap_layout--item "><img class="logo-2 " src="../logo/MSI-Logo.png " alt=" "></div>
-            <div class="wrap_layout--item ">Hãng khác</div>
-        </div>
 
         <!-- banner -->
-        <div class="row ">
-            <div id="carouselExampleControls " class="carousel slide " data-bs-ride="carousel ">
+        <div class="row" style="margin-top:var(--margin-header);">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner ">
-                    <div class="carousel-item active " data-bs-interval="6000 ">
-                        <img src="../banner/banner_1.png " class="d-block w-100 " alt="... ">
+                    <div class="carousel-item active " data-bs-interval="6000">
+                        <img src="../banner/banner_1.png" class="d-block w-100" alt="... ">
                     </div>
                     <div class="carousel-item " data-bs-interval="6000 ">
-                        <img src="../banner/banner_2.png " class="d-block w-100 " alt="... ">
+                        <img src="../banner/banner_1.png" class="d-block w-100 " alt="... ">
                     </div>
                     <div class="carousel-item " data-bs-interval="6000 ">
-                        <img src="../banner/banner_1.png " class="d-block w-100 " alt="... ">
+                        <img src="../banner/banner_1.png" class="d-block w-100" alt="... ">
                     </div>
                 </div>
-                <button class="carousel-control-prev " type="button " data-bs-target="#carouselExampleControls " data-bs-slide="prev ">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon " aria-hidden="true "></span>
     <span class="visually-hidden ">Previous</span>
-  </button>
-                <button class="carousel-control-next " type="button " data-bs-target="#carouselExampleControls " data-bs-slide="next ">
-    <span class="carousel-control-next-icon " aria-hidden="true "></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden ">Next</span> -->
                 </button>
             </div>
         </div>
 
         <!-- Bộ lọc -->
-        <div class="row ">
-            <div class="col-2 ">
+        <div class="row">
+            <div class="col-2">
                 </br>
-                <h6>Bộ lọc <i class="fas fa-filter "></i></h6>
 
-                <div class="btn_boloc ">
-                    <buton type="button " data-bs-toggle="collapse " data-bs-target="#LocTheoHang " aria-expanded="false "> Hãng
+                <h6>Bộ lọc <i class="fas fa-filter"></i></h6>
+
+                <div class="btn_boloc">
+                    <buton type="button" data-bs-toggle="collapse" data-bs-target="#LocTheoHang" aria-expanded="false"> Hãng
                     </buton>
                 </div>
-                <div class="collapse lbl_boloc " id="LocTheoHang ">
-                    <input type="checkbox " id="collapse " />Checkbox 1
+                <div class="collapse lbl_boloc" id="LocTheoHang">
+                    <input type="checkbox" id="collapse" />Checkbox 1
                     </br>
-                    <input type="checkbox " id="collapse " />Checkbox 2
+                    <input type="checkbox" id="collapse" />Checkbox 2
                 </div>
 
-                <div class="btn_boloc ">
-                    <buton type="button " data-bs-toggle="collapse " data-bs-target="#LocTheoGia " aria-expanded="false "> Giá
+                <div class="btn_boloc">
+                    <buton type="button" data-bs-toggle="collapse" data-bs-target="#LocTheoGia" aria-expanded="false"> Giá
                     </buton>
                 </div>
-                <div class="collapse lbl_boloc " id="LocTheoGia ">
-                    <input type="checkbox " id="LocTheoGia " />Checkbox 3
+                <div class="collapse lbl_boloc" id="LocTheoGia">
+                    <input type="checkbox" id="LocTheoGia" />Checkbox 3
                     </br>
-                    <input type="checkbox " id="LocTheoGia " />Checkbox 4
+                    <input type="checkbox" id="LocTheoGia" />Checkbox 4
                 </div>
 
-                <div class="btn_boloc ">
-                    <buton type="button " data-bs-toggle="collapse " data-bs-target="#LocTheoCPU " aria-expanded="false "> CPU
+                <div class="btn_boloc">
+                    <buton type="button" data-bs-toggle="collapse" data-bs-target="#LocTheoCPU" aria-expanded="false"> CPU
                     </buton>
                 </div>
-                <div class="collapse lbl_boloc " id="LocTheoCPU ">
-                    <input type="checkbox " id="LocTheoCPU " />Checkbox 1
+                <div class="collapse lbl_boloc" id="LocTheoCPU">
+                    <input type="checkbox" id="LocTheoCPU" />Checkbox 1
                     </br>
-                    <input type="checkbox " id="LocTheoCPU " />Checkbox 2
+                    <input type="checkbox" id="LocTheoCPU" />Checkbox 2
                 </div>
 
-                <div class="btn_boloc ">
-                    <buton type="button " data-bs-toggle="collapse " data-bs-target="#LocTheoManHinh " aria-expanded="false "> Màn hình
+                <div class="btn_boloc">
+                    <buton type="button" data-bs-toggle="collapse" data-bs-target="#LocTheoManHinh" aria-expanded="false"> Màn hình
                     </buton>
                 </div>
-                <div class="collapse lbl_boloc " id="LocTheoManHinh ">
-                    <input type="checkbox " id="LocTheoManHinh " />Checkbox 1
+                <div class="collapse lbl_boloc" id="LocTheoManHinh">
+                    <input type="checkbox" id="LocTheoManHinh" />Checkbox 1
                     </br>
-                    <input type="checkbox " id="LocTheoManHinh " />Checkbox 2
+                    <input type="checkbox" id="LocTheoManHinh" />Checkbox 2
                 </div>
+
 
             </div>
 
             <!-- Sản phẩm -->
             <div class="col-10 all_product">
-                <div style=" width: 100% ">
-                    <h3>Top 10 sản phẩm bán chạy nhất</h3>
+                <div class="row">
+                    <div style=" width: 100%">
+                        <h4>Top 10 sản phẩm bán chạy nhất</h4>
+                    </div>
+
+                    <!-- Sản phẩm -->
+                    <div class="all_product" ng-controller="ProductController">
+                        <div class="product_item" ng-repeat="p in test|orderBy:orderByField">
+                            <span class="content-sale">Top 1</span>
+                            <a href="../html/product1.html"> <img src=" {{'../img-sanpham/'+p.img}} " alt=" " class="content-img"></a>
+                            <div class="content-description">
+                                <a href=" " class="content-shadow ">{{p.TenSanPham}}</a>
+                                <p class="content-shawdow-p ">{{p.CauHinh}}</p>
+                            </div>
+                            <div class="content-price ">
+                                <span class="content-price-list">{{p.GiaCu}}</span>
+                                <span class="conent-price-item">{{p.GiaMoi}}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="product_item">
-                    <span class="content-sale">KHông giảm giá</span>
-                    <a href="../html/product1.html "><img src="../img-sanpham/macbook1.jpg " alt=" " class="content-img "></a>
-                    <div class="content-in ">
-                        <a href=" "><img src="../img-sanpham/macbook1.jpg " alt=" " class="content-in-img "></a>
-                    </div>
-                    <div class="content-description ">
-                        <a href=" " class="content-shadow ">Mệt</a>
-                        <p class="content-shawdow-p "> </p>Mệt quá
-                    </div>
-                    <div class="content-price ">
-                        <span class="conent-price-item ">Không còn gì để nói</span>
-                        <span class="content-price-list ">Quá mệt</span>
-                    </div>
 
+                <div class="row">
+                    <div style=" width: 100%">
+                        <h4>Sản phẩm khuyến mại</h4>
+                    </div>
+                    <div class="all_product" ng-controller="Product2">
+                        <div class="product_item" ng-repeat="p2 in test2|orderBy:orderByField">
+                            <span class="content-sale">Top 1</span>
+                            <a href="../html/product1.html"> <img src=" {{'../img-sanpham/'+p2.img}} " alt=" " class="content-img"></a>
+                            <div class="content-description">
+                                <a href=" " class="content-shadow ">{{p2.TenSanPham}}</a>
+                                <p class="content-shawdow-p">{{p2.CauHinh}}</p>
+                            </div>
+                            <div class="content-price">
+                                <span class="content-price-list">{{p2.GiaCu}}</span>
+                                <span class="conent-price-item">{{p2.GiaMoi}}</span>
+                            </div>
+                        </div>
 
+                    </div>
                 </div>
-
-
-
-
-
             </div>
         </div>
 
         <!-- Liên hệ -->
 
         <div class="row ">
-            <div class="wrap_layout--2 ">
+            <div class="wrap_layout--2">
                 <div>
-                    <img class="logo-3 " src="../logo/facebook.png " alt=" ">
-                    <img class="logo-3 " src="../logo/zalo.jpg " alt=" ">
-                    <img class="logo-3 " src="../logo/Instagram.png " alt=" ">
+                    <img class="logo-3" src="../logo/facebook.png" alt=" ">
+                    <img class="logo-3" src="../logo/zalo.jpg" alt=" ">
+                    <img class="logo-3" src="../logo/Instagram.png" alt=" ">
                 </div>
 
-                <div>
-                    <p>Bạn muốn là người sớm nhất nhận khuyến mãi đặc biệt?
-                        <br/> Đăng ký ngay
-                    </p>
-
+                <div class="wrap_layout--item--2">
+                    <p>Bạn muốn là người sớm nhất nhận khuyến mãi đặc biệt? Hãy đăng ký ngay.</p>
                 </div>
                 <div>
-                    <button type="button ">Đăng ký</button>
-                    <input type="email " id="exampleFormControlInput1 " placeholder="name@example.com ">
+                    <input class="wrap_layout--item--3" type="email" id="" placeholder="Nhập email tại đây">
+                    <button class="wrap_layout--item--3" type="button">Đăng ký</button>
                 </div>
 
             </div>
             <br>
-            <div>
+            <div class="content_information">
                 <div>
                     <p>
-                        <h4>Thông tin công ty</h4>
+                        <h5>Thông tin công ty</h5>
                         Giới thiệu công ty<br> Quy chế hoạt động sàn TMĐT<br> Hệ thống cửa hàng<br> Mua hàng doanh nghiệp<br> Tuyển dụng<br> Liên hệ</p>
                 </div>
                 <div>
                     <p>
-                        <h4>Chính sách</h4>
+                        <h5>Chính sách</h5>
                         Trả góp <br> Ưu đãi đối tác<br> Điều kiện giao dịch<br> Bảo vệ thông tin người dùng<br> Bảo mật giao dịch của khách hàng<br> Chính sách bảo hành<br> Chính sách và quy định thanh toán<br> Chính sách 30 ngày đổi mới</p>
                 </div>
                 <div>
                     <p>
-                        <h4>Hỗ trợ khách hàng</h4>
+                        <h5>Hỗ trợ khách hàng</h5>
                         Hướng dẫn mua hàng<br> Hóa đơn điện tử<br> Câu hỏi thường gặp<br> Vận chuyển và giao nhận<br> Phương thức thanh toán<br> Tra cứu đơn hàng<br> Bảng giá dịch vụ lắp đặt</p>
                 </div>
                 <div>
                     <p>
-                        <h4>Thông tin khác</h4>
+                        <h5>Thông tin khác</h5>
                         Email: NKare@banmaytinh.com<br> Mua hàng - Góp ý - Bảo hành<br> Gọi: 1800.6800 Miễn phí<br> Sơ đồ trang web<br> Cảnh báo giả mạo<br> Kênh tiếp nhận phản ánh về hối lộ</p>
                 </div>
             </div>
-            <hr size="1px ">
-            <div class="copy-right ">
+            <hr style="border: 1px solid">
+            <div class="content_bottom">
                 <p>Copyright © 1999 - 2021 Công ty Cổ phần Thương mại Nguyễn Kim. <br> Giấy chứng nhận đăng ký kinh doanh số 0302286281, cấp ngày 22/06/2006 bởi Sở Kế hoạch và Đầu tư TP. Hồ Chí Minh.<br> Địa chỉ đăng ký trụ sở chính: 63-65-67 Trần Hưng Đạo,
                     P. Cầu Ông Lãnh, TP. Hồ Chí Minh
                 </p>
             </div>
         </div>
-    </div>
 
     </div>
 </body>
