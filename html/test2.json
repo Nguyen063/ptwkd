@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "TenSanPham": "Macbook pro 2020",
+    "CauHinh": "RAM 8GB, CPU M1, SSD 256GB",
+    "GiaCu": "19.990.000",
+    "GiaMoi": "18.990.000",
+    "img": "macbook1.jpg"
+  },
+  {
+    "id": "2",
+    "TenSanPham": "Macbook pro 2020",
+    "CauHinh": "RAM 8GB, CPU M1, SSD 256GB",
+    "GiaCu": "19.990.000",
+    "GiaMoi": "18.990.000",
+    "img": "macbook1.jpg"
+  },
+  {
+    "id": "3",
+    "TenSanPham": "Macbook pro 2020",
+    "CauHinh": "RAM 8GB, CPU M1, SSD 256GB",
+    "GiaCu": "19.990.000",
+    "GiaMoi": "18.990.000",
+    "img": "macbook1.jpg"
+  },
+  {
+    "id": "4",
+    "TenSanPham": "Macbook pro 2020",
+    "CauHinh": "RAM 8GB, CPU M1, SSD 256GB",
+    "GiaCu": "19.990.000",
+    "GiaMoi": "18.990.000",
+    "img": "macbook1.jpg"
+  },
+  {
+    "id": "5",
+    "TenSanPham": "Macbook pro 2020",
+    "CauHinh": "RAM 8GB, CPU M1, SSD 256GB",
+    "GiaCu": "19.990.000",
+    "GiaMoi": "18.990.000",
+    "img": "macbook1.jpg"
+  }
+]
