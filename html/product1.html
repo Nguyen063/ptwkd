@@ -21,61 +21,8 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#f3efe9;">
-                <div class="container-fluid" style="width:100vw">
-                    <a class="navbar-brand" href="./main.html"> Logo </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active " aria-current="page" href="./main.html">Trang chủ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">Tin tức</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">Bảo hành & sửa chữa</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">Hỗ trợ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">Tài khoản</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="container-fluid">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fas fa-shopping-cart"></i> Giỏ hàng</i></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <!-- Hãng -->
-        <div class="wrap_layout--1">
-            <div class="wrap_layout--item"><img class="logo-1" src="../logo/apple.png" alt=""> Apple</div>
-            <div class="wrap_layout--item"><img class="logo-1" src="../logo/1200px-Dell_Logo.svg.png" alt=""></div>
-            <div class="wrap_layout--item"><img class="logo-1" src="../logo/HP.png" alt=""> </div>
-            <div class="wrap_layout--item"><img class="logo-2" src="../logo/lenovo.jpg" alt=""></div>
-            <div class="wrap_layout--item"><img class="logo-2" src="../logo/Asus.jpg" alt=""></div>
-            <div class="wrap_layout--item"><img class="logo-2" src="../logo/acer.jpg" alt=""></div>
-            <div class="wrap_layout--item"><img class="logo-2" src="../logo/MSI-Logo.png" alt=""></div>
-            <div class="wrap_layout--item">Hãng khác</div>
-        </div>
-
         <!-- Cột thứ 1 -->
-        <div class="row all_product align-middle reponsive_product">
+        <div class="row">
             <table class="table table">
                 <tr>
                     <td>
@@ -83,91 +30,98 @@
                     </td>
                 </tr>
             </table>
-            <div class="col-6">
+            <div class="all_product">
+                <div class="container_product">
 
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="6000">
-                            <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="6000">
+                                <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="6000">
+                                <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="6000">
+                                <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
+                            </div>
                         </div>
-                        <div class="carousel-item" data-bs-interval="6000">
-                            <img src="../banner/banner_2.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="6000">
-                            <img src="../banner/banner_1.png" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <div class="content_container">
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span> -->
                 </button>
-                    <!-- Dòng 2 cột 1 -->
-                    <div class="hide">
-                        <button class="btn btn-danger">Mua ngay</button>
-                        <button class="btn btn-warning">Thêm vào giỏ hàng</button>
+                        </div>
+                        <!-- Dòng 2 cột 1 -->
+                        <div class="hide">
+                            <button class="btn btn-danger">Mua ngay</button>
+                            <button class="btn btn-warning">Thêm vào giỏ hàng</button>
+                        </div>
+
+                    </div>
+                    <!-- Cột thứ 2 -->
+                </div>
+                <div class="container_product">
+                    <p class="name_product">Tên SP</p>
+                    <hr/>
+                    <p> Tình trạng: Còn hàng</p>
+                    <p> Thời gian bảo hành: 1 năm</p>
+                    <div class="content_container">
+                        <div class="content_col-1">1</div>
+                        <div class="content_col-2">Thuộc tính 1</div>
+                    </div>
+                    <div class="content_container">
+                        <div class="content_col-1">2</div>
+                        <div class="content_col-2">Thuộc tính 2</div>
+                    </div>
+                    <div class="content_container">
+                        <div class="content_col-1">3</div>
+                        <div class="content_col-2">Thuộc tính 3</div>
+                    </div>
+                    <div class="content_container">
+                        <div class="content_col-1">4</div>
+                        <div class="content_col-2">Thuộc tính 4</div>
+                    </div>
+                    <div class="content_container">
+                        <div class="content_col-1">5</div>
+                        <div class="content_col-2">Thuộc tính 5</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="all_product_2">
+                    <div class="container_product">
+                        Thông tin chi tiết
                     </div>
 
+                    <div class="container_product">
+                        <!-- Bảng -->
+                        <div>
+                            <h4>Cấu hình laptop</h4>
+                            <table class="table table-striped ">
+                                <tr>
+                                    <td>Cột 1</td>
+                                </tr>
+                                <tr>
+                                    <td>Cột 1</td>
+                                </tr>
+                                <tr>
+                                    <td>Cột 1</td>
+                                </tr>
+                                <tr>
+                                    <td>Cột 1</td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
                 </div>
-                <!-- Cột thứ 2 -->
+
             </div>
-            <div class="col-6">
-                <p class="name_product">Tên SP</p>
-                <hr/>
-                <p> Tình trạng: Còn hàng</p>
-                <p> Thời gian bảo hành: 1 năm</p>
-                <div class="content_container">
-                    <div class="content_col-1">1</div>
-                    <div class="content_col-2">Thuộc tính 1</div>
-                </div>
-                <div class="content_container">
-                    <div class="content_col-1">2</div>
-                    <div class="content_col-2">Thuộc tính 2</div>
-                </div>
-                <div class="content_container">
-                    <div class="content_col-1">3</div>
-                    <div class="content_col-2">Thuộc tính 3</div>
-                </div>
-                <div class="content_container">
-                    <div class="content_col-1">4</div>
-                    <div class="content_col-2">Thuộc tính 4</div>
-                </div>
-                <div class="content_container">
-                    <div class="content_col-1">5</div>
-                    <div class="content_col-2">Thuộc tính 5</div>
-                </div>
-
-
-
-                <!-- Bảng -->
-                <div>
-                    <h4>Cấu hình laptop</h4>
-                    <table class="table table-striped ">
-                        <tr>
-                            <td>Cột 1</td>
-                        </tr>
-                        <tr>
-                            <td>Cột 1</td>
-                        </tr>
-                        <tr>
-                            <td>Cột 1</td>
-                        </tr>
-                        <tr>
-                            <td>Cột 1</td>
-                        </tr>
-                    </table>
-
-                </div>
-            </div>
-
-
-
-        </div>
-        <div class="row ">
-            <p>Thông tin</p>
         </div>
     </div>
 </body>
