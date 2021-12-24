@@ -237,6 +237,10 @@
      }
      .btn_boloc {
          font-size: 1rem;
+         min-width: 180px;
+         display: flex;
+         flex-wrap: nowrap;
+         justify-content: flex-end;
      }
      .lbl_boloc {
          font-size: 0.7rem;
