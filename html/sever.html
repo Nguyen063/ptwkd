@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server</title>
+    <link rel="stylesheet" href="../Câu 1/cau1.css">
+    <script>
+        function getUrlParams() {
+            var params = {};
+            var queryString = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+                params[key] = value;
+            });
+            return params;
+        }
+        var name = unescape(getUrlParams().name);
+        var email = unescape(getUrlParams().email);
+        var gender = unescape(getUrlParams().gender);
+        var job = unescape(getUrlParams().job);
+        var region = unescape(getUrlParams().region);
+        var content = unescape(getUrlParams().content);
+    </script>
+</head>
+
+<body> <div class="flex">
+    <h1>Xác nhận thành công</h1> </div>
+
+    <div class="flex">
+        <div class="confirm">
+        <p>Họ và tên: <span id="name"></span></p>
+        <p>Số điện thoại: <span id="email"></span></p>
+        <p>Địa chỉ: <span id="region"></span></p>
+        <p>Giới tính: <span id="gender"></span></p>
+        <p>Công việc: <span id="job"></span></p>
+        
+        <p>Nội dung thông điệp: <span id="content"></span></p>
+    </div>
+    
+</div>
+    <script>
+        document.getElementById("name").innerHTML = "<b>" + name + "</b>";
+        document.getElementById("email").innerText = email;
+        document.getElementById("gender").innerText = gender == "0" ? "Nam" : "Nữ";
+        document.getElementById("job").innerText = job == "on" ? "Tôi đã có việc làm" : "Tôi chưa đã có việc làm";
+        var loc;
+        switch (region) {
+            case "hochiminh":
+                loc = "Hồ chí Minh";
+                break;
+            case "hanoi":
+                loc = "Hà Nội";
+                break;
+           
+        }
+        document.getElementById("region").innerText = loc;
+        document.getElementById("content").innerText = content;
+    </script>
+</body>
+
+</html>
