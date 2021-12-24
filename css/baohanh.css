@@ -1,0 +1,20 @@
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    justify-content: center;
+    width: 1205px;
+    display: inline;
+}
+
+.text-head {
+    text-align: center;
+}
+
+.text-body {
+    border-radius: 1px;
+    border: 1px solid;
+}
+
+.text {
+    text-align: center;
+}

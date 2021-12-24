@@ -1,0 +1,53 @@
+.container{
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.left{
+    width: 700px;
+}
+.right{
+    width: 420px;
+    margin-left: 60px;
+}
+.select{
+    width: 700px;
+    height: 45px;
+    background-color: gray;
+    margin-bottom: 15px;
+    color: white;
+    font-size: large;
+}
+.expertBook{
+    display: flex;
+}
+.surface{
+    display: flex;
+}
+.lenovo{
+    display: flex;
+}
+.img-head{
+    width: 700px;
+    height: 430px;
+}
+.img{
+    width: 250px;
+    height: 155px;
+    margin-top: 25px;
+}
+.info{
+    text-align: center;
+}
+.text{
+    margin-left: 10px; 
+}
+.dongho{
+    width: 420px;
+}
+.tnex{
+    width: 420px;
+}
