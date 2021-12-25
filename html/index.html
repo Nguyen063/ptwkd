@@ -137,26 +137,15 @@
             <div class="col-2">
                 </br>
 
-                <h6>Bộ lọc <i class="fas fa-filter"></i></h6>
-
-                <div class="btn_boloc">
-                    <buton type="button" data-bs-toggle="collapse" data-bs-target="#LocTheoHang" aria-expanded="false"> Hãng <i class="fas fa-chevron-down"></i>
-                    </buton>
-                </div>
-                <div class="collapse lbl_boloc" id="LocTheoHang">
-                    <input type="checkbox" id="collapse" />Checkbox 1
-                    </br>
-                    <input type="checkbox" id="collapse" />Checkbox 2
-                </div>
-
+                <p>Bộ lọc <i class="fas fa-filter"></i></p>
                 <div class="btn_boloc">
                     <buton type="button" data-bs-toggle="collapse" data-bs-target="#LocTheoGia" aria-expanded="false"> Giá
                     </buton>
                 </div>
                 <div class="collapse lbl_boloc" id="LocTheoGia">
-                    <input type="checkbox" id="LocTheoGia" />Checkbox 3
+                    <input type="checkbox" id="LocTheoGia" /> &lt; 20tr
                     </br>
-                    <input type="checkbox" id="LocTheoGia" />Checkbox 4
+                    <input type="checkbox" id="LocTheoGia" /> 20 đến 40tr
                 </div>
 
                 <div class="btn_boloc">
@@ -164,9 +153,9 @@
                     </buton>
                 </div>
                 <div class="collapse lbl_boloc" id="LocTheoCPU">
-                    <input type="checkbox" id="LocTheoCPU" />Checkbox 1
+                    <input type="checkbox" id="LocTheoCPU" /> AMD
                     </br>
-                    <input type="checkbox" id="LocTheoCPU" />Checkbox 2
+                    <input type="checkbox" id="LocTheoCPU" /> Intel
                 </div>
 
                 <div class="btn_boloc">
@@ -174,10 +163,43 @@
                     </buton>
                 </div>
                 <div class="collapse lbl_boloc" id="LocTheoManHinh">
-                    <input type="checkbox" id="LocTheoManHinh" />Checkbox 1
+                    <input type="checkbox" id="LocTheoManHinh" /> &lt; 14inch
                     </br>
-                    <input type="checkbox" id="LocTheoManHinh" />Checkbox 2
+                    <input type="checkbox" id="LocTheoManHinh" /> 14 - 16inch
                 </div>
+
+                <div class="btn_boloc">
+                    <buton type="button" data-bs-toggle="collapse" data-bs-target="#LocTheoGPU" aria-expanded="false"> GPU
+                    </buton>
+                </div>
+                <div class="collapse lbl_boloc" id="LocTheoGPU">
+                    <input type="checkbox" id="LocTheoGPU" /> Card liền
+                    </br>
+                    <input type="checkbox" id="LocTheoGPU" /> Card rời
+                </div>
+
+                <div class="btn_boloc">
+                    <buton type="button" data-bs-toggle="collapse" data-bs-target="#LocTheoRAM" aria-expanded="false"> RAM
+                    </buton>
+                </div>
+                <div class="collapse lbl_boloc" id="LocTheoRAM">
+                    <input type="checkbox" id="LocTheoRAM" /> &lt;8GB
+                    </br>
+                    <input type="checkbox" id="LocTheoRAM" /> 8GB - 16GB
+                    </br>
+                    <input type="checkbox" id="LocTheoRAM" /> &gt; 32GB
+                </div>
+
+                <div class="btn_boloc">
+                    <buton type="button" data-bs-toggle="collapse" data-bs-target="#LocTheoOCung" aria-expanded="false"> Ổ cứng
+                    </buton>
+                </div>
+                <div class="collapse lbl_boloc" id="LocTheoOCung">
+                    <input type="checkbox" id="LocTheoOCung" /> &lt;512GB
+                    </br>
+                    <input type="checkbox" id="LocTheoOCung" /> &gt;512GB
+                </div>
+
 
 
             </div>
