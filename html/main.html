@@ -192,10 +192,10 @@
                     <!-- Sản phẩm -->
                     <div class="all_product" ng-controller="ProductController">
                         <div class="product_item" ng-repeat="p in test|orderBy:orderByField">
-                            <span class="content-sale">Top 1</span>
+                            <span class="content-sale">Top {{p.id}}</span>
                             <a href="../html/product1.html?productId={{p.id}}"> <img src=" {{'../img-sanpham/'+p.img}} " alt=" " class="content-img"></a>
                             <div class="content-description">
-                                <a href=" " class="content-shadow ">{{p.TenSanPham}}</a>
+                                <a href=" " class="content-shadow">{{p.TenSanPham}}</a>
                                 <p class="content-shawdow-p ">{{p.CauHinh}}</p>
                             </div>
                             <div class="content-price ">
@@ -212,7 +212,7 @@
                     </div>
                     <div class="all_product" ng-controller="Product2">
                         <div class="product_item" ng-repeat="p2 in test2|orderBy:orderByField">
-                            <span class="content-sale">Top 1</span>
+                            <!-- <span class="content-sale"></span> -->
                             <a href="../html/product1.html?productId={{p2.id}}"> <img src=" {{'../img-sanpham/'+p2.img}} " alt=" " class="content-img"></a>
                             <div class="content-description">
                                 <a href=" " class="content-shadow ">{{p2.TenSanPham}}</a>
@@ -253,7 +253,8 @@
                 <div>
                     <p>
                         <h5>Thông tin công ty</h5>
-                        Giới thiệu công ty<br> Quy chế hoạt động sàn TMĐT<br> Hệ thống cửa hàng<br> Mua hàng doanh nghiệp<br> Tuyển dụng<br> Liên hệ</p>
+                        <a>Giới thiệu công ty</a>
+                        <br> Quy chế hoạt động sàn TMĐT<br> Hệ thống cửa hàng<br> Mua hàng doanh nghiệp<br> Tuyển dụng<br> Liên hệ</p>
                 </div>
                 <div>
                     <p>
