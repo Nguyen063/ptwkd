@@ -7,9 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tin tức</title>
     <link rel="stylesheet" href="../css/tintuc.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/product.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script>
+        let app = angular.module("News", []);
+        app.controller("NewsController", function($scope, $http) {
+            $http({
+                method: "GET",
+                url: "tintuc.json"
+            }).then(function(response) {
+                    $scope.test = response.data;
+                },
+                function error(response) {
+                    $scope.error = response.statusText;
+                });
+
+            $scope.selectProduct = function(val) {
+                $scope.productDetails = val;
+            }
+        })
+    </script>
 </head>
 
-<body>
+<!-- <body>
     <div class="container">
         <div class="left">
             <div class="select">
@@ -65,6 +87,27 @@
         </div>
 
 
+    </div>
+</body> -->
+
+<body ng-app="News">
+    <div class="container">
+        <div class="row">
+
+            <div style=" width: 100%">
+                <h4>Top 10 sản phẩm bán chạy nhất</h4>
+            </div>
+
+            <!-- Sản phẩm -->
+            <div class="all_product" ng-controller="NewsController">
+                <div class="product_item" ng-repeat="t in tintuc">
+                    <span class="content-sale">Top 1</span>
+                    <a href="../html/product1.html?productId={{1.id}}"> <img src=" {{'../img-sanpham/'+p.img}} " alt=" " class="content-img"></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </body>
 
