@@ -116,13 +116,13 @@
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active" data-bs-interval="6000">
-                                    <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
+                                    <img src=" {{'../img-sanpham/'+selectedProduct.img}}" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item" data-bs-interval="6000">
-                                    <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
+                                    <img src=" {{'../img-sanpham/'+selectedProduct.img2}}" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item" data-bs-interval="6000">
-                                    <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
+                                    <img src=" {{'../img-sanpham/'+selectedProduct.img}}" class="d-block w-100" alt="...">
                                 </div>
                             </div>
                             <div class="content_container">
@@ -176,7 +176,7 @@
                     <div class="all_product_2 ">
                         <div class="container_product ">
                             <h5>Bài viết đánh giá</h5>
-                            <div><img src="../img-sanpham/apple-macbook-pro-2020_size.jpg " alt=" " class="d-block w-100 "></div>
+                            <div><img src=" {{'../img-sanpham/'+selectedProduct.img2}}" alt=" " class="d-block w-100 "></div>
                             <p><a class="name_product "><b>{{selectedProduct.TenSanPham}}</b></a> {{selectedProduct.BaiViet1}}
                             </p>
                             <p>{{selectedProduct.BaiViet2}}</p>
