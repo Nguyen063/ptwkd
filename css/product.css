@@ -3,6 +3,10 @@
     color: #FFB238;
 }
 
+.background {
+    background-color: rgba(197, 193, 193, 0.1);
+}
+
 .content_container {
     display: flex;
     justify-content: center;
@@ -16,8 +20,11 @@
     min-width: 400px;
 }
 
-
-/* class="d-block w-100" */
+.button-margin {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0px;
+}
 
 .content_col-1 {
     position: relative;
@@ -47,9 +54,6 @@
         align-items: center
     }
 }
-
-
-/* Mobile: max-width < 739px */
 
 @media only screen and (max-width: 46.1875em) {
     .container_product {
