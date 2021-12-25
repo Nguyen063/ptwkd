@@ -11,122 +11,322 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+
 
     <script>
-        $(function() {
-
-        });
+        let urlparams = new URLSearchParams(location.search);
+        var iD = urlparams.get('productId');
     </script>
+    <script>
+        let app = angular.module("angularApp", []);
+        app.controller("DetailController", function($scope, $http) {
+            $http({
+                method: "GET",
+                url: "test.json"
+            }).then(
+                function success(response) {
+                    $scope.selectedProduct = response.data.find(value => value.id == iD);
+                },
+                function error(response) {
+                    $scope.error = response.statusText;
+                }
+            )
+        })
+    </script>
+
+    <!-- <script>
+        $(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script> -->
 </head>
 
-<body>
-    <div class="container">
-        <!-- Cột thứ 1 -->
-        <div class="row">
-            <table class="table table">
-                <tr>
-                    <td>
-                        <i class="fas fa-home"></i> <b>Trang chủ &#62; Dell &#62; <span class="name_product">Tên SP</span></b>
-                    </td>
-                </tr>
-            </table>
-            <div class="all_product">
-                <div class="container_product">
+<body ng-app="angularApp" ng-controller="DetailController">
+    <div class="background">
+        <div class="container">
+            <!-- Header -->
 
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="6000">
-                                <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item" data-bs-interval="6000">
-                                <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item" data-bs-interval="6000">
-                                <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
-                            </div>
+            <div class="row" style="position: fixed; top: 0; right: 0;left: 0; z-index: 1;">
+                <nav class="navbar navbar-expand-lg navbar-light header">
+                    <div class=" container-fluid " style="width:100vw ">
+                        <a class="navbar-brand " href="./main.html "> Logo </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page " href="# ">Trang chủ</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active" href="# ">Tin tức</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active" href="# ">Bảo hành & sửa chữa</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active" href="# ">Hỗ trợ</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active" href="# ">Tài khoản</a>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="content_container">
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span> -->
-                </button>
-                        </div>
-                        <!-- Dòng 2 cột 1 -->
-                        <div class="hide">
-                            <button class="btn btn-danger">Mua ngay</button>
-                            <button class="btn btn-warning">Thêm vào giỏ hàng</button>
-                        </div>
-
                     </div>
-                    <!-- Cột thứ 2 -->
+
+                    <div class="container-fluid ">
+                        <form class="d-flex ">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" ng-model="search">
+                            <button class="btn btn-outline-success " type="submit ">Search</button>
+                        </form>
+                        <ul class="navbar-nav ">
+                            <li class="nav-item ">
+                                <a class="nav-link active " href="# "><i class="fas fa-shopping-cart "></i> Giỏ hàng</i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="wrap_layout--1">
+                    <div class="wrap_layout--item "><img class="logo-1 " src="../logo/apple.png " alt=" "> Apple</div>
+                    <div class="wrap_layout--item "><img class="logo-1 " src="../logo/1200px-Dell_Logo.svg.png " alt=" "></div>
+                    <div class="wrap_layout--item "><img class="logo-1 " src="../logo/HP.png " alt=" "> </div>
+                    <div class="wrap_layout--item "><img class="logo-2 " src="../logo/lenovo.jpg " alt=" "></div>
+                    <div class="wrap_layout--item "><img class="logo-2 " src="../logo/Asus.jpg " alt=" "></div>
+                    <div class="wrap_layout--item "><img class="logo-2 " src="../logo/acer.jpg " alt=" "></div>
+                    <div class="wrap_layout--item "><img class="logo-2 " src="../logo/MSI-Logo.png " alt=" "></div>
+                    <div class="wrap_layout--item ">Hãng khác</div>
                 </div>
-                <div class="container_product">
-                    <p class="name_product">Tên SP</p>
-                    <hr/>
-                    <p> Tình trạng: Còn hàng</p>
-                    <p> Thời gian bảo hành: 1 năm</p>
-                    <div class="content_container">
-                        <div class="content_col-1">1</div>
-                        <div class="content_col-2">Thuộc tính 1</div>
-                    </div>
-                    <div class="content_container">
-                        <div class="content_col-1">2</div>
-                        <div class="content_col-2">Thuộc tính 2</div>
-                    </div>
-                    <div class="content_container">
-                        <div class="content_col-1">3</div>
-                        <div class="content_col-2">Thuộc tính 3</div>
-                    </div>
-                    <div class="content_container">
-                        <div class="content_col-1">4</div>
-                        <div class="content_col-2">Thuộc tính 4</div>
-                    </div>
-                    <div class="content_container">
-                        <div class="content_col-1">5</div>
-                        <div class="content_col-2">Thuộc tính 5</div>
-                    </div>
-                </div>
-
             </div>
-            <div class="row">
-                <div class="all_product_2">
+            <!-- Cột thứ 2 -->
+            <div class="row" style="margin-top:var(--margin-header);">
+                <table class="table table">
+                    <tr>
+                        <td>
+                            <i class="fas fa-home"></i> <b>Trang chủ &#62; Dell &#62; <span
+                                class="name_product">{{selectedProduct.TenSanPham}}</span></b>
+                        </td>
+                    </tr>
+                </table>
+                <div class="all_product">
                     <div class="container_product">
-                        Thông tin chi tiết
-                    </div>
 
-                    <div class="container_product">
-                        <!-- Bảng -->
-                        <div>
-                            <h4>Cấu hình laptop</h4>
-                            <table class="table table-striped ">
-                                <tr>
-                                    <td>Cột 1</td>
-                                    <td>Cột 1111111111111</td>
-                                </tr>
-                                <tr>
-                                    <td>Cột 1</td>
-                                    <td>Cột 1111111111111</td>
-                                </tr>
-                                <tr>
-                                    <td>Cột 1</td>
-                                    <td>Cột 1111111111111</td>
-                                </tr>
-                                <tr>
-                                    <td>Cột 1</td>
-                                    <td>Cột 1111111111111</td>
-                                </tr>
-                            </table>
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="6000">
+                                    <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="6000">
+                                    <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="6000">
+                                    <img src="../img-sanpham/macbook1.jpg" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <div class="content_container">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span> -->
+                            </button>
+                            </div>
+                            <!-- Dòng 2 cột 1 -->
+                            <div class="button-margin">
+                                <button class="btn btn-warning" style="margin-right: 20px;">Thêm vào giỏ hàng</button>
+                                <button class="btn btn-danger">Mua ngay</button>
+                            </div>
 
                         </div>
+                        <!-- Cột thứ 2 -->
                     </div>
+                    <div class=" container_product ">
+                        <p class="name_product ">{{selectedProduct.TenSanPham}}</p>
+                        <hr />
+                        <p> Tình trạng: Còn hàng</p>
+                        <p> Thời gian bảo hành: 1 năm</p>
+                        <div class="content_container ">
+                            <div class="content_col-1 ">1</div>
+                            <div class="content_col-2 ">{{selectedProduct.ThuocTinh1}}</div>
+                        </div>
+                        <div class="content_container ">
+                            <div class="content_col-1 ">2</div>
+                            <div class="content_col-2 ">{{selectedProduct.ThuocTinh2}}</div>
+                        </div>
+                        <div class="content_container ">
+                            <div class="content_col-1 ">3</div>
+                            <div class="content_col-2 ">{{selectedProduct.ThuocTinh3}}</div>
+                        </div>
+                        <div class="content_container ">
+                            <div class="content_col-1 ">4</div>
+                            <div class="content_col-2 ">{{selectedProduct.ThuocTinh4}}</div>
+                        </div>
+                        <div class="content_container ">
+                            <div class="content_col-1 ">5</div>
+                            <div class="content_col-2 ">{{selectedProduct.ThuocTinh5}}</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row ">
+                    <div class="all_product_2 ">
+                        <div class="container_product ">
+                            <h5>Bài viết đánh giá</h5>
+                            <div><img src="../img-sanpham/apple-macbook-pro-2020_size.jpg " alt=" " class="d-block w-100 "></div>
+                            <p><a class="name_product "><b>{{selectedProduct.TenSanPham}}</b></a> {{selectedProduct.BaiViet1}}
+                            </p>
+                            <p>{{selectedProduct.BaiViet2}}</p>
+                            <p>{{selectedProduct.BaiViet3}}</p>
+                        </div>
+
+                        <div class="container_product ">
+                            <!-- Bảng -->
+                            <div>
+                                <h4>Cấu hình laptop</h4>
+                                <table class="table table-striped ">
+                                    <tr>
+                                        <td>CPU</td>
+                                        <td>{{selectedProduct.CPU}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RAM</td>
+                                        <td>{{selectedProduct.RAM}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ổ cứng</td>
+                                        <td>{{selectedProduct.OCung}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Màn hình</td>
+                                        <td>{{selectedProduct.ManHinh}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Card màn hình</td>
+                                        <td>{{selectedProduct.CardManHinh}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cổng kết nối</td>
+                                        <td>{{selectedProduct.CongKetNoi}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hệ điều hành</td>
+                                        <td>{{selectedProduct.HeDieuHanh}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thiết kế</td>
+                                        <td>{{selectedProduct.ThietKe}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kích thước, trọng lượng</td>
+                                        <td>{{selectedProduct.KichThuoc}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <b>Phụ kiện thường được mua cùng</b>
+                        <div class="all_product">
+                            <div class="product_item">
+                                <span class="content-sale">Sale 10%</span>
+                                <a href=""> <img src="../img-sanpham/Chuot_razer.jpg" alt=" " class="content-img"></a>
+                                <div class="content-description">
+                                    <a href=" " class="content-shadow ">Chuột Gamming</a>
+                                    <p class="content-shawdow-p ">Razer DeathAdder V2 Đen</p>
+                                </div>
+                                <div class="content-price ">
+                                    <span class="content-price-list">1.990.000</span>
+                                    <span class="conent-price-item">1.791.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br class="row ">
+                    <div class="form-floating ">
+                        <textarea class="form-control " placeholder="Leave a comment here " id="floatingTextarea "></textarea>
+                        <label for="floatingTextarea ">Comments</label>
+                    </div>
+                    <div class="button-margin ">
+                        <button type="button " class="btn btn-warning ">Gửi bình luận</button>
+                    </div>
+                    <div class="">
+                        <label for=""><b>1 bình luận</b></label>
+                        <p>Sắp xếp theo
+                            <select name="Loc">
+                                <option value="">Mới nhất</option>
+                                <option value="">Cũ nhất</option>
+                            
+                            </select>
+                        </p>
+                    </div>
+                    <div>
+                        <p><i class="fas fa-user"></i> <b>Nguyện :</b> Máy tốt, giá rẻ, nhân viên phục vụ tốt</p>
+                    </div>
+
+                    </br>
+                    </br>
                 </div>
 
+
+                <div class="row ">
+                    <div class="wrap_layout--2 ">
+                        <div>
+                            <img class="logo-3 " src="../logo/facebook.png " alt=" ">
+                            <img class="logo-3 " src="../logo/zalo.jpg " alt=" ">
+                            <img class="logo-3 " src="../logo/Instagram.png " alt=" ">
+                        </div>
+
+                        <div class="wrap_layout--item--2 ">
+                            <p>Bạn muốn là người sớm nhất nhận khuyến mãi đặc biệt? Hãy đăng ký ngay.</p>
+                        </div>
+                        <div>
+                            <input class="wrap_layout--item--3 " type="email " id=" " placeholder="Nhập email tại đây ">
+                            <button class="wrap_layout--item--3 " type="button ">Đăng ký</button>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="content_information ">
+                        <div>
+                            <p>
+                                <h5>Thông tin công ty</h5>
+                                Giới thiệu công ty<br> Quy chế hoạt động sàn TMĐT<br> Hệ thống cửa hàng<br> Mua hàng doanh nghiệp<br> Tuyển dụng
+                                <br> Liên hệ</p>
+                        </div>
+                        <div>
+                            <p>
+                                <h5>Chính sách</h5>
+                                Trả góp <br> Ưu đãi đối tác<br> Điều kiện giao dịch<br> Bảo vệ thông tin người dùng<br> Bảo mật giao dịch của khách hàng<br> Chính sách bảo hành<br> Chính sách và quy định thanh toán<br> Chính sách 30 ngày đổi mới
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                <h5>Hỗ trợ khách hàng</h5>
+                                Hướng dẫn mua hàng<br> Hóa đơn điện tử<br> Câu hỏi thường gặp<br> Vận chuyển và giao nhận<br> Phương thức thanh toán<br> Tra cứu đơn hàng<br> Bảng giá dịch vụ lắp đặt</p>
+                        </div>
+                        <div>
+                            <p>
+                                <h5>Thông tin khác</h5>
+                                Email: NKare@banmaytinh.com<br> Mua hàng - Góp ý - Bảo hành<br> Gọi: 1800.6800 Miễn phí<br> Sơ đồ trang web
+                                <br> Cảnh báo giả mạo<br> Kênh tiếp nhận phản ánh về hối lộ</p>
+                        </div>
+                    </div>
+                    <hr style="border: 1px solid ">
+                    <div class="content_bottom ">
+                        <p>Copyright © 1999 - 2021 Công ty Cổ phần Thương mại Nguyễn Kim. <br> Giấy chứng nhận đăng ký kinh doanh số 0302286281, cấp ngày 22/06/2006 bởi Sở Kế hoạch và Đầu tư TP. Hồ Chí Minh.<br> Địa chỉ đăng ký trụ sở chính: 63-65-67 Trần
+                            Hưng Đạo, P. Cầu Ông Lãnh, TP. Hồ Chí Minh
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
+
+    </div>
     </div>
 </body>
 
