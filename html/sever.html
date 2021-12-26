@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server</title>
+    <link rel="stylesheet" href="../css/sever.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script>
+        function getUrlParams() {
+             var params = {};
+           var queryString = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+               params[key] = value;
+            });
+            return params;
+
+           //const params = new URLSearchParams(Window.location.search);
+        }
+        var name = unescape(getUrlParams().name);
+        var sdt = unescape(getUrlParams().sdt);
+        var email = unescape(getUrlParams().email);
+        var chi = unescape(getUrlParams().chi);
+        var note = unescape(getUrlParams().note);
+        var ma = unescape(getUrlParams().ma);
+        var region = unescape(getUrlParams().region);
+    </script>
+</head>
+
+<body> 
+    <div class="top">
+<<<<<<< HEAD
+        <a style="text-decoration:none;color:white;margin-left: 20px;" class="text" href="../index.html">Trở về</a>
+=======
+        <a style="text-decoration:none;color:white;margin-left: 20px;" class="text" href="/html/main.html">Trở về</a>
+>>>>>>> 8c6dc9329c11b2db19fdc90b29b51075f3e383ff
+    </div>
+    <br> <br> <br>
+    <div class="flex">
+    
+    <h1>XÁC NHẬN THÔNG TIN THÀNH CÔNG </h1> </div>
+        <br>
+    <div class="flex">
+        <div class="confirm">
+        <p>Họ và tên: <span id="name"></span></p> <br>
+        <p>Số điện thoại: <span id="sdt"></span></p><br>
+        <p>Địa chỉ: <span id="region"></span></p>
+        <br>
+        <p>Địa chỉ: <span id="chi"></span></p><br>
+        <p>Email: <span id="email"></span></p><br>
+        <p>Ghi chú: <span id="note"></span></p><br>
+        <p>Mã giảm giá: <span id="ma"></span></p>
+    </div>
+    
+</div>
+    <script>
+        document.getElementById("name").innerHTML = "<b>" + name + "</b>";
+        document.getElementById("sdt").innerHTML = sdt;
+        document.getElementById("chi").innerHTML = chi;
+        document.getElementById("email").innerHTML = email;
+        document.getElementById("note").innerHTML = note;
+        document.getElementById("ma").innerHTML = ma;
+        var loc;
+        switch (region) {
+            case "hochiminh":
+                loc = "Hồ chí Minh";
+                break;
+            case "hanoi":
+                loc = "Hà Nội";
+                break;
+           
+        }
+        document.getElementById("region").innerText = loc;
+        document.getElementById("content").innerText = content;
+    </script>
+    <br> <br> <br>
+    <div class="row ">
+        <div class="wrap_layout--2">
+            <div>
+                <img class="logo-3" src="../logo/facebook.png" alt=" ">
+                <img class="logo-3" src="../logo/zalo.jpg" alt=" ">
+                <img class="logo-3" src="../logo/Instagram.png" alt=" ">
+            </div>
+
+            <div class="wrap_layout--item--2">
+                <p>Bạn muốn là người sớm nhất nhận khuyến mãi đặc biệt? Hãy đăng ký ngay.</p>
+            </div>
+            <div>
+                <input class="wrap_layout--item--3" type="email" id="" placeholder="Nhập email tại đây">
+                <button class="wrap_layout--item--3" type="button">Đăng ký</button>
+            </div>
+
+        </div>
+        <br>
+        <div class="content_information">
+            <div>
+                <p>
+                    <h5>Thông tin công ty</h5>
+                    Giới thiệu công ty<br> Quy chế hoạt động sàn TMĐT<br> Hệ thống cửa hàng<br> Mua hàng doanh nghiệp<br> Tuyển dụng<br> Liên hệ</p>
+            </div>
+            <div>
+                <p>
+                    <h5>Chính sách</h5>
+                    Trả góp <br> Ưu đãi đối tác<br> Điều kiện giao dịch<br> Bảo vệ thông tin người dùng<br> Bảo mật giao dịch của khách hàng<br> Chính sách bảo hành<br> Chính sách và quy định thanh toán<br> Chính sách 30 ngày đổi mới</p>
+            </div>
+            <div>
+                <p>
+                    <h5>Hỗ trợ khách hàng</h5>
+                    Hướng dẫn mua hàng<br> Hóa đơn điện tử<br> Câu hỏi thường gặp<br> Vận chuyển và giao nhận<br> Phương thức thanh toán<br> Tra cứu đơn hàng<br> Bảng giá dịch vụ lắp đặt</p>
+            </div>
+            <div>
+                <p>
+                    <h5>Thông tin khác</h5>
+                    Email: NKare@banmaytinh.com<br> Mua hàng - Góp ý - Bảo hành<br> Gọi: 1800.6800 Miễn phí<br> Sơ đồ trang web<br> Cảnh báo giả mạo<br> Kênh tiếp nhận phản ánh về hối lộ</p>
+            </div>
+        </div>
+        <hr style="border: 1px solid">
+        <div class="content_bottom">
+            <p>Copyright © 1999 - 2021 Công ty Cổ phần Thương mại Nguyễn Kim. <br> Giấy chứng nhận đăng ký kinh doanh số 0302286281, cấp ngày 22/06/2006 bởi Sở Kế hoạch và Đầu tư TP. Hồ Chí Minh.<br> Địa chỉ đăng ký trụ sở chính: 63-65-67 Trần Hưng Đạo,
+                P. Cầu Ông Lãnh, TP. Hồ Chí Minh
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
