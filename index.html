@@ -89,10 +89,7 @@
                                 <a class="nav-link active" href="./html/baohanh.html">Bảo hành & sửa chữa</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="./html/baohanh.html">Hỗ trợ</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link active" href="# ">Tài khoản</a>
+                                <a class="nav-link active" href="./html/dangky.html">Tài khoản</a>
                             </li>
                         </ul>
                     </div>
@@ -133,7 +130,7 @@
                         <img src="./banner/banner_1.png" class="d-block w-100" alt="... ">
                     </div>
                     <div class="carousel-item " data-bs-interval="6000 ">
-                        <img src="./banner/banner_1.png" class="d-block w-100 " alt="... ">
+                        <img src="./banner/banner_2.png" class="d-block w-100 " alt="... ">
                     </div>
                     <div class="carousel-item " data-bs-interval="6000 ">
                         <img src="./banner/banner_1.png" class="d-block w-100" alt="... ">
@@ -228,7 +225,9 @@
             </div>
 
             <!-- Sản phẩm -->
+           
             <div class="col-10 all_product">
+                <br>
                 <div class="row">
                     <div style=" width: 100%">
                         <h4>Top 10 sản phẩm bán chạy nhất</h4>
@@ -292,7 +291,27 @@
 
                     </div>
                 </div>
+                <div class="row">
+                    <div style=" width: 100%">
+                        <h4>Sản phẩm bạn vừa xem </h4>
+                    </div>
 
+                    <!-- Sản phẩm -->
+                    <div class="all_product" ng-controller="ProductController">
+                        <div class="product_item" ng-repeat="p in Top10SP|orderBy:orderByField">
+                            <span class="content-sale">Top {{p.id}}</span>
+                            <a href="./html/product1.html?productId={{p.id}}"> <img src=" {{'./img-sanpham/'+p.img}} " alt=" " class="content-img"></a>
+                            <div class="content-description">
+                                <a href=" " class="content-shadow">{{p.TenSanPham}}</a>
+                                <p class="content-shawdow-p ">{{p.CauHinh}}</p>
+                            </div>
+                            <div class="content-price ">
+                                <span class="content-price-list">{{p.GiaCu}}</span>
+                                <span class="conent-price-item">{{p.GiaMoi}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
