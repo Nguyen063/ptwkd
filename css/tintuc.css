@@ -1,53 +1,44 @@
-.container{
-    margin-top: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
+.allnew {
+    position: relative;
 }
 
-.left{
-    width: 700px;
+.news_1 {
+    margin: 10px;
 }
-.right{
-    width: 420px;
-    margin-left: 60px;
+
+.news_1:hover {
+    padding: 5px;
+    background-color: #FFB238;
+    box-shadow: 5px 5px #888888;
 }
-.select{
-    width: 700px;
-    height: 45px;
-    background-color: gray;
-    margin-bottom: 15px;
-    color: white;
-    font-size: large;
-}
-.expertBook{
+
+.news_2 {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
-.surface{
+
+.news_2_item {
+    width: 200px;
+}
+
+.news_2_item:hover {
+    padding: 5px;
+    background-color: #FFB238;
+    box-shadow: 5px 5px #888888;
+}
+
+.news_3_item:hover {
+    padding: 5px;
+    background-color: #FFB238;
+    box-shadow: 5px 5px #888888;
+}
+
+ :root {
+    --margin-header_news: 80px;
+}
+
+.container_news_detail {
     display: flex;
-}
-.lenovo{
-    display: flex;
-}
-.img-head{
-    width: 700px;
-    height: 430px;
-}
-.img{
-    width: 250px;
-    height: 155px;
-    margin-top: 25px;
-}
-.info{
-    text-align: center;
-}
-.text{
-    margin-left: 10px; 
-}
-.dongho{
-    width: 420px;
-}
-.tnex{
-    width: 420px;
+    justify-content: center;
 }
