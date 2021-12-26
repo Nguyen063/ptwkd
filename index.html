@@ -225,7 +225,7 @@
             </div>
 
             <!-- Sản phẩm -->
-           
+
             <div class="col-10 all_product">
                 <br>
                 <div class="row">
@@ -299,14 +299,14 @@
                     <!-- Sản phẩm -->
                     <div class="all_product" ng-controller="ProductController">
                         <div class="product_item" ng-repeat="p in Top10SP|orderBy:orderByField">
-                            <span class="content-sale">Top {{p.id}}</span>
+                            <span class="content-sale"></span>
                             <a href="./html/product1.html?productId={{p.id}}"> <img src=" {{'./img-sanpham/'+p.img}} " alt=" " class="content-img"></a>
                             <div class="content-description">
                                 <a href=" " class="content-shadow">{{p.TenSanPham}}</a>
                                 <p class="content-shawdow-p ">{{p.CauHinh}}</p>
                             </div>
                             <div class="content-price ">
-                                <span class="content-price-list">{{p.GiaCu}}</span>
+                                <!-- <span class="content-price-list">{{p.GiaCu}}</span> -->
                                 <span class="conent-price-item">{{p.GiaMoi}}</span>
                             </div>
                         </div>
