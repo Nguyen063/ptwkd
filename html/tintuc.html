@@ -102,7 +102,7 @@
             <div class="col-8 allnew">
                 <div class="row" ng-controller="NewsController">
                     <div class="news_1" ng-repeat="t in tintuc ">
-                        <a href="../html/tintucDetail.html?tintucId={{t.id}} "> <img src="../img/Asus1.jpg" alt=" " class="d-block w-100 "></a>
+                        <a href="../html/tintucDetail.html?tintucId={{t.id}} "> <img src="{{'../img/'+t.img1}}" alt=" " class="d-block w-100 "></a>
                         <h5>{{t.title}}</h5>
                         <!-- <img src="{{'../img/'+t.img1}}" alt=" "> -->
 
@@ -111,7 +111,7 @@
                 <div class="row " ng-controller="NewsController1">
                     <div class="news_2">
                         <div class="news_2_item" ng-repeat="t1 in tintuc1 ">
-                            <a href="../html/tintucDetail.html?tintucId={{t1.id}} "> <img src="../img/Asus1.jpg " alt=" " class="d-block w-100 "></a>
+                            <a href="../html/tintucDetail.html?tintucId={{t1.id}} "> <img src="{{'../img/'+t1.img1}}" alt=" " class="d-block w-100 "></a>
                             <p>{{t1.title}}</p>
                         </div>
                     </div>
