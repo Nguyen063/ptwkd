@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +10,13 @@
     <link rel="stylesheet" href="../css/main.css">
     <script>
         function getUrlParams() {
-             var params = {};
-           var queryString = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-               params[key] = value;
+            var params = {};
+            var queryString = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+                params[key] = value;
             });
             return params;
 
-           //const params = new URLSearchParams(Window.location.search);
+            //const params = new URLSearchParams(Window.location.search);
         }
         var name = unescape(getUrlParams().name);
         var sdt = unescape(getUrlParams().sdt);
@@ -27,32 +28,29 @@
     </script>
 </head>
 
-<body> 
+<body>
     <div class="top">
-<<<<<<< HEAD
         <a style="text-decoration:none;color:white;margin-left: 20px;" class="text" href="../index.html">Trở về</a>
-=======
-        <a style="text-decoration:none;color:white;margin-left: 20px;" class="text" href="/html/main.html">Trở về</a>
->>>>>>> 8c6dc9329c11b2db19fdc90b29b51075f3e383ff
     </div>
     <br> <br> <br>
     <div class="flex">
-    
-    <h1>XÁC NHẬN THÔNG TIN THÀNH CÔNG </h1> </div>
-        <br>
+
+        <h1>XÁC NHẬN THÔNG TIN THÀNH CÔNG </h1>
+    </div>
+    <br>
     <div class="flex">
         <div class="confirm">
-        <p>Họ và tên: <span id="name"></span></p> <br>
-        <p>Số điện thoại: <span id="sdt"></span></p><br>
-        <p>Địa chỉ: <span id="region"></span></p>
-        <br>
-        <p>Địa chỉ: <span id="chi"></span></p><br>
-        <p>Email: <span id="email"></span></p><br>
-        <p>Ghi chú: <span id="note"></span></p><br>
-        <p>Mã giảm giá: <span id="ma"></span></p>
+            <p>Họ và tên: <span id="name"></span></p> <br>
+            <p>Số điện thoại: <span id="sdt"></span></p><br>
+            <p>Địa chỉ: <span id="region"></span></p>
+            <br>
+            <p>Địa chỉ: <span id="chi"></span></p><br>
+            <p>Email: <span id="email"></span></p><br>
+            <p>Ghi chú: <span id="note"></span></p><br>
+            <p>Mã giảm giá: <span id="ma"></span></p>
+        </div>
+
     </div>
-    
-</div>
     <script>
         document.getElementById("name").innerHTML = "<b>" + name + "</b>";
         document.getElementById("sdt").innerHTML = sdt;
@@ -68,7 +66,7 @@
             case "hanoi":
                 loc = "Hà Nội";
                 break;
-           
+
         }
         document.getElementById("region").innerText = loc;
         document.getElementById("content").innerText = content;
